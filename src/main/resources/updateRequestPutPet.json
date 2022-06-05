@@ -1,0 +1,18 @@
+{
+  "id": 4444,
+  "category": {
+    "id": 0,
+    "name": "BichonMaltes"
+  },
+  "name": "Sutton",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 4,
+      "name": "King"
+    }
+  ],
+  "status": "available"
+}
