@@ -1,4 +1,3 @@
-
 package com.cucumber.stepdefs;
 
 import io.cucumber.java.Before;
@@ -20,7 +19,8 @@ public class StoreImplementation implements Serializable {
     private Response postStore = null;
     private Response deleteStore = null;
     Response responseDeleteOrder = null;
-    @Before
+
+    @Before("@store")
     public void before() {
         RestAssured.baseURI = "https://petstore.swagger.io/v2";
 
@@ -34,9 +34,6 @@ public class StoreImplementation implements Serializable {
         return responseGetStore;
     }
 
-
-
-
     @Given("the following post request that add a new order")
     public void postNewOrder() {
 
@@ -47,7 +44,7 @@ public class StoreImplementation implements Serializable {
 
     @And("the response is 200 for the postOrder")
     public void validateResponsePostOrder() {
-        assertTrue("The response is not 200", postStore.statusCode()==200);
+        assertTrue("The response is not 200", postStore.statusCode() == 200);
     }
 
     @Given("the following get request that returns us statusCode")
@@ -67,6 +64,5 @@ public class StoreImplementation implements Serializable {
     public void validateResponseErase() {
         assertTrue("The response is not 200", responseDeleteOrder.statusCode() == 200);
     }
-
 
 }
